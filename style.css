@@ -1,0 +1,860 @@
+﻿/* ==========================================================================
+   Table of Contents
+   ==========================================================================
+
+Built mobile first so check media queries first if you're looking
+for a desktop specific style.
+
+sm, md, and lg prefixes mean they will apply to small (mobile), medium (tablet),
+or large (desktop) screen sizes.
+
+1. Layout & General
+2. Typography & Headings
+3. Header
+4. Nav
+5. Content/Media
+6. Footer
+7. Other
+8. Media Queries
+
+*/
+
+
+/*=======================
+1. Layout & General
+========================*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #ddd;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+}
+
+img {
+    max-width: 100%;
+    /* general responsive img style */
+}
+
+hr {
+    border-top: 1px solid #7e8aa2;
+    /* override default color */
+}
+
+
+/* Flex Grid*/
+
+.flex {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.grid {
+    display: block;
+}
+
+.col {
+    -ms-flex: 1;
+    flex: 1;
+}
+
+.sm-whole {
+    width: 100%;-
+}
+
+.gutters {
+    padding: 0.5em;
+}
+
+.flex-v-center {
+    -ms-flex-align: center;
+    -ms-grid-row-align: center;
+    align-items: center;
+    /* vertically center align the flex items to the container*/
+}
+
+.flex-justify {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    /* creates max space in between each of the flex items until items fill container */
+}
+
+/* Alignment & Spacing */
+
+.center-text {
+    text-align: center;
+}
+
+.center {
+    margin: auto;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.no-v-margin-center {
+    margin: 0 auto;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.padding-1 {
+    padding: 1em;
+}
+
+.margin-05 {
+    margin: 0.5em;
+}
+
+.margin-1 {
+    margin: 1em;
+}
+
+
+/* Buttons/Links */
+
+.link {
+    text-decoration: none;
+    color: #184394;
+}
+
+.link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.btn {
+    display: inline-block;
+    min-width: 7em;
+    margin: 1em auto;
+    padding: 0.2em 1em;
+    transition: 0.3s all;
+    text-align: center;
+    text-decoration: none;
+    color: #c3944e;
+    outline: 1px solid #c3944e;
+    /* outline instead of border so it doesn't shift content a pixel */
+    font-weight: 400;
+}
+
+.btn:hover {
+    background: #FF9800;
+    color: #fff;
+}
+
+.btn:active {
+    box-shadow: inset 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Lists */
+
+.list-no-style {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Sizing */
+
+.inherit-height {
+    height: inherit;
+}
+
+/*=======================
+2. Typography & Headings
+========================*/
+
+
+/* Headings */
+
+h1 {
+    font-size: 2.7em;
+}
+
+
+/* Text Styling */
+
+.unbold {
+    font-weight: 300;
+}
+
+.small-text {
+    font-size: 0.8em;
+}
+
+.all-caps {
+    text-transform: uppercase;
+}
+
+.big-text {
+    font-size: 1.3em;
+}
+
+.big-text-2 {
+    font-size: 2em;
+}
+
+
+/* Text Layout */
+
+.center-text {
+    text-align: center;
+}
+
+.left-text {
+    text-align: left;
+}
+
+.right-text {
+    text-align: right;
+}
+
+
+/* Text Colors */
+
+.white {
+    color: #fff;
+}
+
+.dark-gray {
+    color: #333;
+}
+
+.sm-black {
+    color: #000;
+}
+
+
+/* Effects */
+
+.ghost-shadow {
+    letter-spacing: .05em;
+    text-shadow: 2px 2px 0 #ddd, 4px 4px 0 rgba(0, 0, 0, 0.1);
+    /* first shadow must be same as bg color */
+}
+
+
+/*=======================
+3. Header
+========================*/
+
+header {
+    /*declared height needed since fixed header is out of doc flow, header height pushes elements down */
+    height: 5em;
+    /* height should be same as (height+paddings) for the fixed wrapper */
+}
+
+.fixed-wrapper {
+    position: fixed;
+    /* sticky top bar */
+    z-index: 999;
+    /* Keep it visible on top of content */
+    width: 100%;
+    /* maintain height of header */
+    background: #263248;
+    background: linear-gradient(160deg, #263248 0%, #828ea6 100%);
+}
+
+.logo {
+    display: block;
+    max-height: 2em;
+    /* Keep it in the header */
+    margin: auto;
+    transition: 0.3s all;
+}
+
+.logo:hover {
+    opacity: 0.7;
+}
+
+
+/*=======================
+4. Nav
+========================*/
+
+nav {
+    width: 100%;
+    padding: 1em 0;
+    background: #7e8aa2;
+    background-image: linear-gradient(60deg, #5d9b93 15%, #7e8aa2 100% );
+}
+
+nav a {
+    margin: 0 0 0 0.5em;
+    padding: 1em 0 1em 1em;
+}
+
+
+/*=======================
+5. Content/Media
+========================*/
+
+section {
+    max-width: 50em;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+
+/* Hero Text/Image*/
+
+.hero {
+    max-width: 100%;
+    /* stretch to fit screen */
+    min-height: 12em;
+    margin: 0;
+    padding: 0;
+}
+
+.main-text {
+    padding: 1.5em;
+    background: #fff;
+}
+
+.hero-background-img {
+    min-height: inherit;
+    /* so the bg stays same height as the hero section */
+    background: #7E8AA2;
+    /* fallback */
+    background: url("../img/hero.jpg") 20% 40%/cover;
+    /* slightly lowered bg to better keep face visible */
+    background: -webkit-image-set(url('../img/hero-1x.jpg') 1x, url('../img/hero.jpg') 2x) 50% 40%/cover;
+    /* switch bgs based on resolution, only for webkit at this point */
+    animation: PanInBG 15s ease 1;
+    /* animate it like panning down from above */
+}
+
+/* Creates a sort of moving background effect */
+
+@keyframes PanInBG {
+    0% {
+        background-size: 110%;
+        background-position: 100% 0%;
+    }
+    50% {
+        background-size: 100%;
+        background-position: 0% 50%;
+    }
+    100% {
+        background-size: cover;
+        background-position: 50% 40%;
+    }
+}
+
+/* Featured Content */
+
+.featured {
+    max-width: 60em;
+    /* since it's not one long sentence but divided content it can be wider*/
+    margin: -3em auto 0 auto;
+    /* slightly overlay top of featured over the hero */
+    padding: 0;
+}
+
+article {
+    width: 100%;
+    transition: 0.3s all;
+    border-top: 0.5em solid #263248;
+    border-image: url('') 1;
+    background: #fff;
+}
+
+article:hover {
+    transition: all 0.3s;
+    border-color: #FFF;
+    border-image: url('') 1;
+    }
+
+article:hover
+    .btn {
+    /* style the button when pointer enters the article */
+    background: #c3944e;
+    outline: 0;
+    color: #fff;
+}
+
+article:hover
+    .btn:hover {
+    /* set a hover bg since the specificity of the bg overrides the default button hover effect */
+    background: #FF9800;
+}
+
+.feature-img {
+    transition: 0.5s all;
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+}
+
+.feature-img:hover {
+    opacity: 0.9;
+}
+
+
+/* Contact */
+
+.contact li {
+    display: inline-block;
+    margin: 0 1.8em 0.5em 0;
+}
+
+
+/* Testimonials */
+
+blockquote {
+    background: #f9f9f9;
+    font-weight: 300;
+    border-width: 0 0 0 1px;
+    padding: 1em;
+}
+
+
+/* Make the quotation mark accent */
+
+blockquote:before {
+    color: #ccc;
+    content: "â€œ";
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+/* Style the testimonial source */
+
+blockquote p {
+    padding: 0.5em;
+    /* center the source text for small screens */
+    text-align: center;
+    color: #888;
+    font-size: 0.8em;
+    font-style: italic;
+    border-top: 1px solid #eee;
+    margin: 1em 0 0 0;
+}
+
+blockquote img {
+    /* Smaller screens the the source pic will be above the text */
+    display: block;
+    margin: 0.5em auto;
+    border-radius: 99%;
+    max-width: 3em;
+}
+
+
+/* Process */
+
+.card {
+    margin: 0.5em;
+    border: 1px solid #ccc;
+    border-left: 3px solid #707f94;
+    font-weight: 100;
+    background: #fff;
+}
+
+.card:nth-child(2n) {
+    border-left: 3px solid #ac6d6d;
+}
+
+.card:nth-child(3n) {
+    border-left: 3px solid #73a16a;
+}
+
+.card:nth-child(4n) {
+    border-left: 3px solid #b9965a;
+}
+
+
+/* About */
+
+.headshot {
+    margin: 0 1em 1em 0;
+    border-radius: 99%;
+}
+
+/*=======================
+6. Footer
+========================*/
+
+footer {
+    width: 100%;
+    padding: 1em 0;
+    border-top: 0.3em solid #7e8aa2;
+    background: #263248;
+    background-image: linear-gradient(160deg, #263248 0%, #828ea6 100%);
+}
+
+footer a {
+    display: inline-block;
+    /* so the footer expands with their height/padding */
+    padding: 1em;
+}
+
+
+/*=======================
+7. Other
+========================*/
+
+
+/* Animations */
+
+.fade-in {
+    animation: fadein 0.5s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.delay-025 {
+  animation-delay: 0.25s;
+}
+
+.delay-05 {
+  animation-delay: 0.5s;
+}
+
+.delay-075 {
+  animation-delay: 0.75s;
+}
+
+.delay-1 {
+  animation-delay: 1s;
+}
+
+/* Fontello Icon Font Plugin */
+
+@font-face {
+    font-family: "fontello";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../font/fontello.eot");
+    src: url("../font/fontello.eot?#iefix") format("embedded-opentype"), url("../font/fontello.woff2") format("woff2"), url("../font/fontello.woff") format("woff"), url("../font/fontello.ttf") format("truetype"), url("../font/fontello.svg#fontello") format("svg");
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    display: inline-block;
+    width: 1em;
+    margin: 0 0.5em 0 0;
+    text-align: center;
+    text-decoration: inherit;
+    text-transform: none;
+    font-family: "fontello";
+    font-size: 1.2em;
+    font-weight: normal;
+    font-style: normal;
+    /* For safety - reset parent styles, that can break glyph codes*/
+    font-variant: normal;
+    /* fix buttons height, for twitter bootstrap */
+    line-height: 1em;
+    speak: none;
+    /* Font smoothing. That was taken from TWBS */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-github:before {
+    content: '\e800';/* 'î €' */
+}
+
+.icon-linkedin:before {
+    content: '\e801';/* 'î ' */
+}
+
+.icon-gmail:before {
+    content: '\e802';/* 'î ‚' */
+}
+
+.icon-upwork:before {
+    content: '\e803';/* 'î ƒ' */
+}
+
+/* Animate.css Plugin */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -10%, 0);
+        transform: translate3d(0, -10%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -10%, 0);
+        transform: translate3d(0, -10%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+/*=======================
+8. Media Queries
+========================*/
+
+
+/* Microscopic screens, probably unnecessary but just in case */
+
+@media only screen and (max-width:300px) {
+    body {
+        font-size: 16px;
+    }
+
+    header {
+        height: 7em;
+        /* increase space so the header bar doesnt cover the hero on tiny screens */
+    }
+}
+
+
+/* For tablets */
+
+@media only screen and (min-width: 600px) {
+
+    /* Flex Grid */
+
+    .grid {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        /* so it can break to the next line */
+    }
+
+    .md-whole {
+        min-width: 100%;
+    }
+
+    .md-halves {
+        min-width: 50%;
+    }
+
+    .md-natural {
+        min-width: 0;
+    }
+
+    /* Animate the breakpoint transitions */
+
+    .grid, .md-whole, .md-halves, .lg-thirds {
+        transition: 0.3s all;
+    }
+    
+
+    /* About */
+
+    .headshot {
+        float: left;
+    }
+}
+
+
+/* For Desktop */
+
+@media only screen and (min-width: 1000px) {
+
+    /* Flex Grid */
+
+    .lg-flex {
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .lg-thirds {
+        min-width: 33.33%;
+    }
+
+    /* Layout */
+
+    .lg-inline-middle {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    /*Typography*/
+
+    .lg-white {
+        color: #fff;
+    }
+
+    .lg-stripe-shadow:after {
+        position: absolute;
+        z-index: -1;
+        /* stay under the letters */
+        top: 36px;
+        left: 31px;
+        /* left and top exactly adjusts offset the shadow */
+        content: attr(data-text);
+        /* get shadow lettering content from data-text attribute on the html element */
+        color: #222;
+        /* fallback in case of no gradient/bg clip support*/
+        background-image: -webkit-linear-gradient(top left, transparent 0%, transparent 25%, #000 25%, #000 50%, transparent 50%, transparent 75%, #000 75%);
+        /* create striped shadow only for webkit browsers */
+        -webkit-background-clip: text;
+        /* only for webkit unfortunately, clips shadow to text shape */
+        background-size: 4px 4px;
+        /* controls stripe width */
+        text-shadow: none;
+        /* shadow fills in the stripes if not cancelled */
+        -webkit-text-fill-color: transparent;
+    }
+
+    .lg-outline {
+        text-shadow: -1px -1px 0 #222, 1px -1px 0 #222, -1px 1px 0 #222, 1px 1px 0 #222;
+        /* 1px shadows on all 4 sides to outline the letters */
+    }
+
+    /* Header/Nav */
+
+    header {
+        /* collapse the hero image to top so nav header overlays hero img */
+        height: auto;
+    }
+
+    .fixed-wrapper {
+        /* transparent overlay the nav header on the hero image */
+        background: linear-gradient(180deg, rgb(38, 50, 72) 0%, rgba(38, 50, 72, 0.54) 70%, rgba(38, 50, 72, 0.36) 85%, rgba(130, 142, 166, 0) 100%);
+        /* pad the bottom a little since fade to clear makes it appear uneven */
+        padding-bottom: 0.3em;
+    }
+
+    .logo-link {
+        display: block;
+        /* allows margins in ie10 */
+        margin: 0 0 0 5%;
+        /* keep the logo from getting too close to the edges */
+    }
+
+    .logo {
+        width: 10em;
+        max-height: 3em;
+        /* bigger screens mean bigger logos :p */
+    }
+
+    nav {
+        width: auto;
+        /* collapse it so you can stick it to one side */
+        margin: 0 5% 0 0;
+        background: transparent;
+        /* let the header background show through */
+    }
+
+    /* Hero */
+
+    .hero {
+        position: relative;
+        /* Keep the background img positioned inside the hero */
+        min-height: 25em;
+        height: 25em;
+        /* need height for ie10 vertical centering on flex items*/
+    }
+
+    .main-text {
+        position: relative;
+        left: 7%;
+        min-width: 20%;
+        /* To keep it a small text box */
+        max-width: 41%;
+        /* so it doesn't go to the viewport edge and cover the image */
+        -ms-transform: skew(0, -2deg);
+        transform: skew(0, -2deg);
+        /* give it a nice rising text skew effect */
+        text-align: left;
+        /* uncenter for large screens */
+        color: #fff;
+        background: #333;
+        /* fallback */
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .main-text h1 {
+        border-top: 0.1em solid #fff;
+    }
+
+    .hero-background-img {
+        position: absolute;
+        /* So the main text can be overlaid on it */
+        z-index: -999;
+        /* keep it in the background */
+        top: 0;
+        left: 0;
+    }
+
+    /* Featured */
+
+    .featured {
+        margin: -2em auto 1em auto;
+    }
+
+    .featured .lg-thirds:nth-child(2) {
+        margin: -1em 0 0 0;
+        /* offset the middle featured item for visual interest */
+    }
+}
+
+
+/* For Large Desktop Screens */
+
+@media only screen and (min-width: 1200px) {
+
+    /* Layout & General */
+
+    .xl-80-max-width {
+        max-width: 80em;
+    }
+
+    .xl-80-width {
+        width: 80em;
+    }
+
+    /* Typography & Headings */
+
+    h1 {
+        font-size: 3.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* For Gigantic Screens, Like TV Size */
+
+@media only screen and (min-width: 2500px) {
+
+  body {
+    font-size: 30px;
+    /* Scale everything up so it's not so tiny on a huge screen */
+  }
+
+}
